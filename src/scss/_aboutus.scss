@@ -1,0 +1,35 @@
+.about {
+
+    .wrapper {
+        font-size:0;
+
+        img {
+            width:100%;
+            max-height:700px;
+            object-fit: cover;
+            margin:40px 0;
+        }
+        section {
+            padding:30px 0;
+            text-align: left;
+            font-size:0;
+            div {
+                width:50%;
+                display: inline-block;
+                font-size:18px;
+                font-family:$main-font;
+                padding-right:20px;
+                vertical-align: top;
+
+                p {
+                    @include mq(0,425px) {
+                        font-size:16px;
+                    }
+                    &:nth-of-type(n + 2) {
+                        margin-top:10px;
+                    }
+                }
+            }
+        }
+    }
+}

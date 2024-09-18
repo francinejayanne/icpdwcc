@@ -1,0 +1,200 @@
+.shopping-list {
+    margin-top:123px;
+    margin-bottom:40px;
+    @include mq(0,1024px) {
+        margin-top:93px;
+    }
+    @include mq(0,768px) {
+        margin-top:106px;
+    }
+    @include mq(0,425px) {
+        margin-top:91px;
+    }
+
+    .wrapper {
+        margin:30px auto;
+
+        .cart-table {
+            display: grid;
+            grid-template-columns: 15% auto 15% 140px 140px 80px;
+            overflow: hidden;
+            @include mq(0,1024px) {
+                grid-template-columns: 15% auto 18% 100px 100px 70px;
+            }
+            @include mq(0,768px) {
+                grid-template-columns: 15% auto 100px 100px 70px;
+                div {
+                    &:nth-of-type(6n + 3) {
+                        display:none;
+                    }
+                }
+            }
+            @include mq(0,425px) {
+                grid-template-columns: auto 80px 70px 30px;
+                div {
+                    &:nth-of-type(6n + 1) {
+                        display:none;
+                    }
+                }
+            }
+
+            div {
+                border: 1px solid #ccc;
+                padding:5px;
+                font-family:$main-font;
+                font-size:20px;
+                background-color:$white;
+                text-transform: uppercase;
+
+                @include mq(0, 425px) {
+                    font-size:14px;
+                }
+                &:nth-of-type(-n+6) { //Table header
+                    border:none;
+                    text-transform: uppercase;
+                    text-align: left;
+                    font-size: 16px;
+                    line-height:20px;
+                    color:$dark;
+                    background-color: transparent;
+                    @include mq(0, 425px) {
+                        font-size:14px;
+                    }
+                }
+                &:nth-of-type(n + 7) { //Table cells
+                    padding:40px 5px;
+                    height:100px;
+                }
+                &:nth-of-type(6n+1):nth-of-type(n + 7) { //'Product' column
+                    padding:5px;
+                    overflow:hidden;
+                    img {
+                        height:90px;
+                        position:relative;
+                    }
+                }
+                &:nth-of-type(6n+2):nth-of-type(n + 7) { //'Description' column
+                    padding:30px 5px;
+                    @include mq(0, 425px) {
+                        padding:20px 5px;
+                    }
+                    p {
+                        display:block;
+                        width:100%;
+                        margin-left:10px;
+                        text-align: left;
+
+                        &:last-of-type {
+                            color:#aaa;
+                            margin-top:4px;
+                            font-size:16px;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+                &:nth-of-type(6n+4):nth-of-type(n + 7) { //'Quantity' cells
+                    padding: 5px;
+                    font-size:0;
+                    p {
+                        display: inline-block;
+                        font-size:20px;
+                        line-height:90px;
+                        margin-right:10px;
+                        vertical-align:top;
+                        @include mq(0, 425px) {
+                            font-size:14px;
+                        }
+                    }
+                    div {
+                        display: inline-block;
+                        padding:28px 0;
+                        span {
+                            display:block;
+                            color:$white;
+                            background-color:$dark;
+                            height:16px;
+                            width:16px;
+                            font-size:18px;
+                            line-height:15px;
+                            text-align:center;
+                            &:first-of-type {
+                                margin-bottom: 2px;
+                            }
+                            &:active {
+                                transition:transform 0.2s ease;
+                                transform:scale(0.9);
+                            }
+                        }
+                    }
+                }
+                a {
+                    width:100%;
+                    height:100%;
+                    text-decoration: none;
+                    color:#DD0033;
+                }
+
+            }
+        }
+        .subtotal {
+            width:100%;
+            height:50px;
+            background-color: #ddd;
+            article {
+                width:180px;
+                min-width:80px;
+                float:right;
+                margin-right:80px;
+                font-family:$main-font;
+                font-size:16px;
+                line-height: 50px;
+                @include mq(0, 425px) {
+                    font-size:12px;
+                    margin-right:20px;
+                }
+                span {
+                    font-size:20px;
+                    @include mq(0, 425px) {
+                        font-size:14px;
+                    }
+                    &::after {
+                        content:' €';
+                    }
+                }
+            }
+        }
+        .next-action-cart {
+            width:100%;
+            position:relative;
+            padding:30px 0;
+            .continue-shopping {
+                position:absolute;
+                left:0;
+                color:$dark;
+                font-family: $main-font;
+                line-height:60px;
+                text-decoration: underline;
+                @include mq(0, 425px) {
+                    font-size:12px;
+                }
+            }
+            .order-now {
+                position:absolute;
+                right:0;
+                input {
+                    border-radius: 15px;
+                    height:60px;
+                    width:150px;
+                    font-size:16px;
+                    font-family:$main-font;
+                    text-transform: uppercase;
+                    @include mq(0, 425px) {
+                        font-size:14px;
+                        height:60px;
+                        width:120px;
+                    }
+                }
+            }
+        }
+    }
+}

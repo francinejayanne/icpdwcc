@@ -1,0 +1,68 @@
+
+.form {
+    text-align: center;
+    width:100%;
+    padding: 30px 0;
+
+    .wrapper {
+        margin:auto;
+
+        .fields {
+            font-size:0;
+            margin: 40px 0;
+            font-family:$main-font;
+            @include mq(0, 350px) {
+                margin-top: 30px;
+            }
+
+            p {
+                text-align:left;
+                font-size:18px;
+                text-transform: uppercase;
+
+                span {
+                    font-size: 12px;
+                    text-transform: lowercase;
+                }
+            }
+            select {
+                color:#aaa;
+
+                option:not(:first-of-type) {
+                    color: $dark;
+                }
+                option {
+                    &:first-of-type {
+                        display: none;
+                    }
+                }
+            }
+            input,select {
+                height:35px;
+                display: inline-block;
+                border:1px solid $dark;
+                border-radius: 8px;
+                padding:0 12px;
+                font-family:$main-font;
+                font-size:16px;
+                line-height:20px;
+                @include mq(0, 425px) {
+                    font-size:14px;
+                }
+            }
+            button {
+                display: inline-block;
+                -webkit-box-shadow: 11px 11px 19px 5px rgba(52,53,54,0.35),
+                                    inset 0px -56px 109px -34px rgba(52,53,54,0.87);
+                -moz-box-shadow: 11px 11px 19px 5px rgba(52,53,54,0.35),
+                                inset 0px -56px 109px -34px rgba(52,53,54,0.87);
+                box-shadow: 11px 11px 19px 5px rgba(52,53,54,0.35),
+                            inset 0px -56px 109px -34px rgba(52,53,54,0.87);
+                
+                @include mq(0, 1024px) {
+                    min-width:50px;
+                }
+            }
+        }
+    }
+}

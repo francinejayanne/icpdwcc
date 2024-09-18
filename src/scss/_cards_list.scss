@@ -1,0 +1,212 @@
+.card-display {
+    
+    .wrapper {
+
+        .card-list {
+            width:100%;
+            font-size: 0;
+            margin-top:100px;
+            @include mq(0,1024px) {
+                margin-top:60px;
+            }
+
+            &:nth-of-type(1) {
+                margin-top:0;
+            }
+            &:last-of-type {
+                margin-bottom:50px;
+                @include mq(0,1024px) {
+                    margin-bottom:0;
+                }
+            }
+            .main-title {
+                margin-bottom:10px;
+            }
+
+            .filters {
+                margin: 60px 0;
+                @include mq(0,425px) {
+                    text-align:center;
+                    margin:30px 0;
+                }
+
+                select {
+                    height:40px;
+                    width:150px;
+                    margin:0 10px;
+                    font-family: $main-font;
+                    font-size:16px;
+                    line-height:40px;
+                    border:none;
+                    border-bottom: 1px solid $dark;
+                    background-color:transparent;
+                    color:$dark;
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                    option:not(:first-of-type) {
+                        color: $dark;
+                    }
+                    option {
+                        &:first-of-type {
+                            display: none;
+                        }
+                    }
+                    @include mq(0,425px) {
+                        display:block;
+                        margin:10px auto;
+                        width:200px;
+                        &:first-of-type {
+                            margin-left: auto;
+                        }
+                        &:last-of-type {
+                            margin-right: auto;
+                        }
+                    }
+                }
+            }
+
+            section {
+                margin:50px 0;
+                text-align:left;
+                @include mq(0,1024px) {
+                    margin:30px 0;
+                }
+
+                .product-card {
+                    background-color: $white;
+                    width:calc(25% - 20px);
+                    display:inline-block;
+                    height:50vh;
+                    margin:30px 10px;
+                    overflow: hidden;
+                    text-decoration: none;
+                    color:$dark;
+                    -webkit-box-shadow: 0px 0px 6px 0px rgba($dark,0.34);
+                    -moz-box-shadow: 0px 0px 6px 0px rgba($dark,0.34);
+                    box-shadow: 0px 0px 6px 0px rgba($dark,0.34);
+                    @include mq(0,1024px) {
+                        height:40vh;
+                    }
+                    @include mq(0,768px) {
+                        width:calc(50% - 20px);
+                        height:50vh;
+                    }
+                    @include mq(0,425px) {
+                        height:30vh;
+                    }
+                    @include mq(0, 350px) {
+                        width:100%;
+                        height:50vh;
+                        margin:30px 0;
+                    }
+                    img {
+                        height:80%;
+                        min-width:100%;
+                        transition: all 0.2s;
+                        position: relative;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        -webkit-box-shadow: inset 0px -20px 22px -2px rgba($dark,0.05);
+                        -moz-box-shadow: inset 0px -20px 22px -2px rgba($dark,0.05);
+                        box-shadow: inset 0px -20px 22px -2px rgba($dark,0.05);
+                        &:hover {
+                            transform:scale(1.1) translateX(-45%);
+                        }
+                        @include mq(0,1024px) {
+                            height:75%;
+                        }
+                        @include mq(0,768px) {
+                            height:80%;
+                        }
+                        @include mq(0,425px) {
+                            height:70%;
+                        }
+                        @include mq(0, 350px) {
+                            height:76%;
+                        }
+                    }
+                    section {
+                        height:20%;
+                        margin:0;
+                        position: relative;
+                        z-index:1;
+                        background-color: $white;
+                        border-top:solid 1px $dark;
+                        text-align:center;
+                        @include mq(0,1024px) {
+                            height:25%;
+                        }
+                        @include mq(0,768px) {
+                            height:20%;
+                        }
+                        @include mq(0,425px) {
+                            height:30%;
+                        }
+                        @include mq(0, 350px) {
+                            height:24%;
+                        }
+                        p {
+                            font-size:24px;
+                            font-weight: bold;
+                            font-family: $main-font;
+                            position: relative;
+                            top:14px;
+                            @include mq(0,425px) {
+                                font-size:18px;
+                            }
+                            &:nth-of-type(2) {
+                                font-size: 16px;
+                                margin-top:10px;
+                                @include mq(0,425px) {
+                                    font-size:14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .page-numbers {
+            width:100%;
+            margin-bottom: 30px;
+
+            ul {
+                font-size:0;
+
+                li {
+                    width:32px;
+                    height:32px;
+                    margin:5px;
+                    display:inline-block;
+
+                    background-color: $white;
+                    color:$key-color;
+                    border: 2px solid $key-color;
+                    border-radius:20%;
+                    font-family: $main-font;
+                    font-size:20px;
+                    line-height:28px;
+                    -webkit-box-shadow: 2px 2px 10px 0px rgba(52,52,52,0.3);
+                    -moz-box-shadow: 2px 2px 10px 0px rgba(52,52,52,0.3);
+                    box-shadow: 2px 2px 10px 0px rgba(52,52,52,0.3);
+                    &:active {
+                        transition:all 0.2s ease;
+                        transform:scale(0.9);
+                        -webkit-box-shadow: 0px 0px 5px 0px rgba(52,52,52,0.3);
+                        -moz-box-shadow: 0px 0px 5px 0px rgba(52,52,52,0.3);
+                        box-shadow: 0px 0px 5px 0px rgba(52,52,52,0.3);
+                    }
+                }
+                li.active {
+                    color:$dark;
+                    border:3px solid $dark;
+                }
+            }
+        }
+    }
+}

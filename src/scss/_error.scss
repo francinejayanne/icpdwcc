@@ -1,0 +1,64 @@
+.error {
+    height:80%;
+    text-align: center;
+    background-color: $white;
+
+    .wrapper {
+        margin: auto;
+        display: flex;
+        align-items: center;
+        height:100%;
+
+        .error-container {
+            width:100%;
+
+            p {
+                font-family:$main-font;
+                font-size: 50px;
+                text-transform: uppercase;
+                margin:auto;
+                margin-bottom:20px;
+                width:100%;
+                @include mq(0,1024px) {
+                    font-size:40px;
+                }
+                @include mq(0,425px) {
+                    font-size:28px;
+                }
+                @include mq(0,375px) {
+                    font-size:20px;
+                }
+            }
+            .key{
+                width:90px;
+                height:90px;
+                display: inline-block;
+                margin: 10px 5px;
+                line-height:90px;
+                font-size:50px;
+                text-transform: uppercase;
+                @include mq(0,768px) {
+                    font-size:40px;
+                    line-height:70px;
+                    width:70px;
+                    height:70px;
+                }
+            }
+        }
+    }
+    img {
+        position:absolute;
+        bottom:20%;
+        right:0;
+        width:30%;
+        @include mq(0,1024px) {
+            width:40%;
+        }
+        @include mq(0,768px) {
+            width:50%;
+        }
+        @include mq(0,425px) {
+            width:60%;
+        }
+    }
+}

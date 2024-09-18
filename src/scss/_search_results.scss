@@ -1,0 +1,33 @@
+.results {
+    padding:100px 0;
+    display: grid;
+    grid-template-columns:25% 25% 25% 25%;
+    grid-row-gap: 40px;
+    border-bottom:solid 1px #ccc;
+
+    div {
+
+        img {
+            max-width:80%;
+            border:solid 1px #ccc;
+            margin-bottom:20px;
+        }
+        p {
+            font-size:16px;
+            font-family:$main-font;
+
+            &:first-of-type {
+                font-size:20px;
+                font-weight: bolder;
+                margin-bottom:10px;
+            }
+            &:last-of-type {
+
+
+                &:after {
+                    content:' €';
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+.details {
+    text-align:center;
+
+    .wrapper {
+        img {
+            width:100%;
+            margin-bottom:40px;
+        }
+        section {
+            font-family: $main-font;
+
+            .price {
+                font-weight: 600;
+                font-size:24px;
+            }
+            .description {
+                margin:20px auto;
+                width:60%;
+                text-align: left;
+                line-height:20px;
+                @include mq(0,425px) {
+                    width:100%;
+                }
+            }
+            .color-selection {
+                text-align:center;
+
+                p {
+                    text-transform:uppercase;
+                    font-weight: 600;
+                    font-size:18px;
+                }
+                article {
+                    margin:auto;
+
+                    .product-color {
+                        width:30px;
+                        height:30px;
+                        border:solid 1px $dark;
+                        margin:10px 5px;
+                        display:inline-block;
+
+                        &:last-of-type {
+                            margin-right:0;
+                        }
+                    }
+                    .selected-color {
+                        border:solid 4px $dark;
+                    }
+                    .white {
+                        background-color:#fff;
+                    }
+                    .silver {
+                        background-color:#868686;
+                    }
+                    .black {
+                        background-color:#000;
+                    }
+                }
+            }
+            button {
+                height:60px;
+                width:20%;
+                font-size:20px;
+                text-transform: uppercase;
+                margin:20px;
+                @include mq(0,1024px) {
+                    width:30%;
+                }
+                @include mq(0,425px) {
+                    width:70%;
+                }
+            }
+        }
+    }
+}
+
+.show-related {
+    text-align:center;
+    padding:355px 0 30px 0;
+    a {
+        text-decoration: none;
+        color:$white;
+        p {
+            font-family:$main-font;
+            font-size:20px;
+            text-transform:uppercase;
+            padding:20px 0;
+        }
+    }
+}

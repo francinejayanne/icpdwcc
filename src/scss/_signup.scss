@@ -1,0 +1,31 @@
+.signup {
+    padding: 100px 0;
+
+    .wrapper {
+
+        .fields {
+            margin-bottom:0;
+            @include mq(0,425px) {
+                text-align:center;
+            }
+            input {
+                width:55%;
+                @include mq(0,425px) {
+                    width:90%;
+                }
+            }
+            button {
+                height:35px;
+                width:140px;
+                margin-left:14px;
+                font-size:16px;
+                border-radius:8px;
+                @include mq(0,425px) {
+                    float:right;
+                    margin-top:10px;
+                    margin-right:5%;
+                }
+            }
+        }
+    }
+}

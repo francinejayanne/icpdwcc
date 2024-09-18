@@ -1,0 +1,6 @@
+//MQ
+@mixin mq($minValue,$maxValue) {
+  @media (min-width: #{$minValue}) and (max-width: $maxValue) {
+    @content;
+  }
+}

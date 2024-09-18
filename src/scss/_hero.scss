@@ -1,0 +1,140 @@
+.hero {
+    height: 85%;
+    background: url('../images/typewriter1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include mq(0,768px) {
+        height:60%;
+    }
+    .slide {
+        position: absolute;
+        z-index:1;
+		top:50%;
+		transform: translateY(-50%);
+		width: 40px;
+		height: 120px;
+        background-color:rgba($white, 0.8);
+        line-height: 120px;
+        border:solid 2px $dark;
+        color:$dark;
+		text-decoration: none;
+        font-family:$main-font;
+        font-weight:600;
+        font-size:26px;
+		text-align: center;
+        transition: all 0.3s ease;
+        @include mq(0,425px) {
+            transform:translateY(-200px);
+        }
+		&.left {
+            left: 0;
+            border-left:0;
+            border-radius:0 12px 12px 0;
+            &:hover{
+                padding-left:10px;
+            }
+		}
+		&.right {
+            right: 0;
+            border-right:0;
+            border-radius:12px 0 0 12px;
+            &:hover{
+                padding-right:10px;
+            }
+		}
+		&:hover{
+            width: 50px;
+		}
+	}
+    div {
+		height: 100%;
+        max-width: 1180px;
+        width:100%;
+        margin:0 auto;
+        position:relative;
+
+        article {
+            text-align:center;
+            position: relative;
+            transform: translateY(-50%);
+            top: 50%;
+
+            h1 {
+                font-size: 80px;
+                @include mq(0,425px) {
+                    font-size:64px;
+                }
+            }
+            h2 {
+                font-size: 25px;
+                margin:35px 0;
+                @include mq(0,425px) {
+                    font-size:18px;
+                }
+            }
+            .btn {
+                display: inline-block;
+                width:20%;
+                min-width:140px;
+                max-width:300px;
+                background-color:rgba($dark, 0.05);
+                line-height: 60px;
+                font-size:16px;
+                border:solid 2px $dark;
+                border-radius:12px;
+                color:$dark;
+                font-weight: 600;
+                text-align: center;
+                text-decoration: none;
+                transition:transform 0.4s;
+                &:hover {
+                    transform: scale(1.05);
+                }
+                @include mq(0,768px) {
+                    font-weight: 500;
+                    width:28%;
+                }
+                @include mq(0,425px) {
+                    width:44%;
+                    font-size:14px;
+                    line-height:48px;
+                }
+            }
+            * {
+                font-family:$main-font;
+                text-transform: uppercase;
+                color:$dark;
+            }
+        }
+        ul {
+            position:absolute;
+            left:50%;
+            bottom:30px;
+            transform: translateX(-50%);
+    
+            li {
+                display: inline-block;
+                margin-right:15px;
+                &:last-child {
+                    margin-right:0;
+                }
+                a {
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    border:2px solid $dark;
+                    background-color: transparent;
+                    border-radius: 6px;
+                    overflow:hidden;
+                    &:hover {
+                        background: rgba($dark, 0.2);
+                    }
+                    &.active {
+                        background: rgba($dark,0.5);
+                    }
+                }
+            }
+        }
+    }
+}

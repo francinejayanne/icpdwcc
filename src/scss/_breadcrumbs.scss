@@ -1,0 +1,42 @@
+.breadcrumbs {
+    text-align:center;
+    margin-top:123px;
+    padding: 40px;
+
+    @include mq(0,1024px) {
+        margin-top:93px;
+    }
+    @include mq(0,768px) {
+        margin-top:106px;
+    }
+    @include mq(0,425px) {
+        margin-top:91px;
+    }
+
+    .wrapper {
+        text-align: left;
+        height:18px;
+    
+        ul {
+            list-style:none;
+            li {
+                display: inline;
+                font-size: 18px;
+                
+                @include mq(0,425px) {
+                    font-size:14px;
+                }        
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-family:$title-font;
+                    color: #333;
+                }
+            }
+            li+li:before {
+                color: $dark;
+                content: "/\00a0";
+            }
+        }
+    }
+}

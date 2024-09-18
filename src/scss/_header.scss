@@ -1,0 +1,141 @@
+header {
+    position:fixed;
+    top:0;
+    z-index:2;
+    width: 100%;
+    background-color:rgba($dark, 0.8);
+    div {
+        border-bottom: solid 1px $white;
+        padding: 40px 0;
+        font-size: 0;
+        @include mq(0,1024px) {
+            padding:25px 0;
+        }
+        .left-nav {
+            width:60%;
+            text-align:left;
+            ul {
+                @include mq(0,950px) {
+                    transition:display 0.2s ease;
+                }
+                li {
+                    margin-left: 30px;
+                    @include mq(0,1024px) {
+                        margin-left:20px;
+                    }
+                }
+                @include mq(0, 950px) {
+                    position:absolute;
+                    z-index:1;
+                    right:10%;
+                    top:90px;
+                    width:200px;
+                    background-color:$dark;
+                    border:solid 1px $white;
+                    border-radius:12px;
+                    font-size:18px;
+                    padding:30px 10px;
+                    li {
+                        display:block;
+                        &:nth-of-type(n + 2){
+                            margin-top:30px;
+                        }
+                    }
+                }
+            }
+            @include mq(0,950px) {
+                width:40px;
+                display:inline-block;
+            }
+        }
+        .right-nav {
+            width:40%;
+            text-align: right;
+            @include mq(0,950px) {
+                width:calc(100% - 40px);
+            }
+            ul {
+                li {
+                    &:nth-of-type(n + 2) {
+                        margin-left: 30px;
+                        @include mq(769px,1024px) {
+                            margin-left:20px;
+                        }
+                    }
+                }
+                &:not(.hamburguer):not(.personal) {
+                    @include mq(0,500px) {
+                        position:absolute;
+                        z-index:1;
+                        right:10%;
+                        top:90px;
+                        width:200px;
+                        background-color:$dark;
+                        border:solid 1px $white;
+                        border-radius:12px;
+                        font-size:18px;
+                        padding:30px 10px;
+                        text-align:left;
+                        li {
+                            display:block;
+                            text-align:left;
+                            margin-left:30px;
+                            &:nth-of-type(n + 2){
+                                margin-top:30px;
+                            }
+                        }
+                    }
+                }
+            }
+            .hamburguer {
+                @include mq(0,950px) {
+                    display:inline-block;
+                    font-size:30px;
+                    color:$white;
+                    margin-left:30px;
+                    float:right;
+                    transform:translateY(-20%);
+                }
+            }
+            .personal {
+                @include mq(0,500px) {
+                    display:inline-block;
+                    font-size:30px;
+                    color:$white;
+                    margin-left:30px;
+                    float:right;
+                    transform:translateY(-20%);
+                }
+            }
+        }
+        nav {
+            display: inline-block;
+            img {
+                display: inline-block;
+                height:40px;
+                transform: translateY(30%);
+                margin-right:10px;
+                @include mq(0,500px) {
+                    transform:none;
+                }
+            }
+            ul {
+                display: inline-block;
+                li {
+                    display: inline-block;
+                    a {
+                        font-size:18px;
+                        color:$white;
+                        font-family:$main-font;
+                        font-weight: lighter;
+                        text-decoration: none;
+                        svg {
+                            margin-right:6px;
+                            transform: translateY(10%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
